@@ -1,0 +1,59 @@
+.header {
+    background-color: $color-grey-dark-1;
+    grid-column: full-start / col-end 6;
+    background-image: linear-gradient(rgba($color-secondary-dark, .9), rgba($color-secondary-dark, .9)), url(../img/puddle603x434.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 8rem;
+    padding-top: 4rem;
+    display: grid;
+    grid-template-rows: 1fr min-content minmax(6rem, min-content) 1fr;
+    // The grid container has a defined height (80% of vh) so give the first row in container one fr and allow all the other rows to be sized automatically. This will put space between first row and rest of items
+    // The second row is sized according to min-content and the third one is a minimum of 6rem
+    // Want space after button so fourth row is 1fr
+    // at some point 6 rem will overflow so add minmax function
+    grid-template-columns: minmax(min-content, max-content);
+    // Don't want it to extend full width so size it for content - Also means no line breaks
+    // minmax - min-content - column should never be narrower than the content
+    // max-content  - as wide as possible to fit all the content no matter width of viewport
+    grid-row-gap: 1.5rem;
+    // Use grid-gap to add margin
+    justify-content: center;
+    // center horizontally
+    @media only screen and (max-width: $breakpoint-medium) {
+        grid-column: 1 / -1;
+    }
+    @media only screen and (max-width: $breakpoint-small) {
+        padding: 5rem;
+    }
+    &__logo {
+        height: 5rem;
+        justify-self: center;
+    }
+    &__btn {
+        align-self: start;
+        justify-self: start;
+    }
+    &__word {
+        // both text and pseudo elements can be grid items
+        display: grid;
+        grid-template-columns: 1fr max-content 1fr;
+        grid-column-gap: 1.5rem;
+        align-items: center;
+        // vertically align
+        font-size: 1.5rem;
+        color: $color-grey-light-1;
+        &::before,
+        &::after {
+            content: "";
+            height: 1px;
+            display: block;
+            background-color: currentColor;
+            // 1px line expands to fill column
+        }
+    }
+    &__text {
+        color: $color-grey-dark-1;
+        font-size: 1.6rem;
+    }
+}

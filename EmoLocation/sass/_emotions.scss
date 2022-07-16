@@ -1,0 +1,60 @@
+.emotions {
+    // background-color: #084c61;
+    // background-color: $color-secondary-dark;
+    // opacity: .8;
+    border-radius: 1rem;
+    padding: 3vw;
+    margin: 6vw 0;
+    display: grid;
+    grid-column: center-start / center-end;
+    // grid-template-columns: repeat(4, 1fr);
+    // To make responsive ==>
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    // auto-fit adds as many tracks as will fit in container
+    grid-row-gap: 6vw;
+    grid-column-gap: 6vw;
+    // align-items: start;
+    // default is stretch which leaves a minimal extra space between header and text, but decided to go for same sized tiles instead
+}
+
+.emotion {
+    border: 0.5rem outset $color-tertiary-dark;
+    /*   outline: 0.5rem solid #c9d2f6; */
+    outline: .75rem solid $color-grey-light-1;
+    box-shadow: 0 0 0 1.5rem $color-secondary-dark;
+    border-radius: 12px;
+    outline-offset: 0.5rem;
+    background-color: rgba($color-secondary-dark, .9);
+    opacity: .9;
+    border-radius: 1rem;
+    padding: 1vw;
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    grid-template-rows: 4rem 1fr;
+    grid-row-gap: 1vw;
+    grid-column-gap: 1vw;
+    // default is stretch so leaves extra space between text
+    &__icon {
+        filter: contrast(125%);
+        width: 4rem;
+        height: 4rem;
+        border: 1px solid $color-tertiary-dark;
+        border-radius: 50%;
+        grid-row: 1 / span 2;
+        opacity: 1;
+        //Reminder: -1 only works with explicit grid - use span when undefined
+    }
+    &__text {
+        font-size: 1.7rem;
+        color: $color-grey-light-2;
+        margin-bottom: 2vw;
+    }
+}
+
+.heading-4--light {
+    align-self: center;
+}
+
+.location__icon {
+    width: 1.5rem;
+}

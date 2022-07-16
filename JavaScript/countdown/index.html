@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Countdown</title>
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <!-- For free stock videos - https://pixabay.com/videos/ -->
+    <!-- Free online file compressor - https://www.youcompress.com/ -->
+    <!-- Usally go with 1280x720 for smallest laoding size - When adding video overlay quality not so important -->
+
+    <!-- Video Background -->
+    <video src="time.mp4" class="video-background" loop muted autoplay></video>
+    <div class="video-overlay"></div>
+    <!-- loop - constant video background autoplay = plays when page loads muted = browser rules state must be muted -->
+
+    <!-- There are three views - The first is the input. The next is the countdown. And the last is the completed countdown. Only show one at a time so hide input container by adding the hidden attribute to input container -->
+
+    <!-- Container -->
+    <div class="container">
+        <!-- All 3 views are within container -->
+        <!-- Input Container -->
+        <div class="input-container" id="input-container">
+            <h1>Create a Countdown</h1>
+            <!-- Don't need to include action property in this part of form because submitting at bottom -->
+            <!-- https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/forms/Basic_form_hints -->
+            <!-- https://fonts.google.com/ -->
+            <!-- Form Submit - https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/submit_event -->
+            <form class="form" id="countdownForm">
+                <label for="title">Title</label>
+                <input type="text" id="title" placeholder="What are you counting down to?" />
+                <label for="date-picker">Select a Date</label>
+                <input type="date" id="date-picker" />
+                <button type="submit">Submit</button>
+                <!-- Going to take form values and run function  -->
+            </form>
+        </div>
+
+        <!-- Countdown -->
+        <div class="countdown" id="countdown" hidden>
+            <h1 id="countdown-title"></h1>
+            <ul>
+                <li><span></span>Days</li>
+                <li><span></span>Hours</li>
+                <li><span></span>Minutes</li>
+                <li><span></span>Seconds</li>
+            </ul>
+            <!-- Because this is the only place using Span's, can use query selector all to return all of these at once instead of giving them their own individual I.Ds. -->
+            <button id="countdown-button">Reset</button>
+            <!-- This button is what allows "reset" and jumping back to the input container. -->
+        </div>
+
+        <!-- Completed Countdown -->
+        <div class="complete" id="complete" hidden>
+            <h1 class="complete-title">Countdown Complete!</h1>
+            <h1 id="complete-info"></h1>
+            <button id="complete-button">New Countdown</button>
+        </div>
+    </div>
+
+    <!-- Script -->
+    <script src="script.js"></script>
+</body>
+
+</html>

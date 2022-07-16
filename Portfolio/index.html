@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Naming conventions for this project came from the premis that "div" is a meaningless element and should be avoided as much as possible -->
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+    <!-- <link rel="shortcut icon" type="image/png" href="img/favicon.png"> -->
+    <link rel="stylesheet" href="css/style.css" />
+    <title>C-Dub Portfolio</title>
+</head>
+
+
+<body>
+    <main id="main">
+
+        <nav id="navbar">
+            <a class="nav-link" href="#welcome__section">About</a>
+            <a class="nav-link" href="#css-and-html__section">CSS/HTML</a>
+            <a class="nav-link" href="#javascript__section">JavaScript</a>
+            <a class="nav-link" href="#react__section">React</a>
+            <a class="nav-link" href="#profile__section">Contact</a>
+        </nav>
+
+        <section id="welcome__section">
+            <article id="welcome-info__images">
+                <img class="welcome-info__img--one" src="img/NeedHelp2Cropped.png" />
+            </article>
+            <article id="welcome-info__article">
+                <h1>Help for your divs is here!</h1>
+                <p>Do your divs have trouble buying a drink because they lack ids?</p>
+                <p>
+                    Is it difficult for them to find a love interest because they lack class?
+                </p>
+                <p>
+                    Do your divs struggle with diplomacy because their positions are absolute?
+                </p>
+                <p>
+                    Do you wonder why your divs behave like anarchists? - It's becase they have no borders.
+                </p>
+                <br>
+                <h2>We can make a div-erence to your web site.</h2>
+                <p>We copy and paste only the best solutions from Stack Overflow.</p>
+                <p>
+                    Our layouts are user friendly .. but very particular about who their friends are.
+                </p>
+            </article>
+        </section>
+
+        <section id="css-and-html__section">
+            <blockquote>
+                “Oh, the places you'll go! There is fun to be done! There are points to be scored. There are games to be won. And the magical things you can do with that (code) ..."
+            </blockquote>
+            <h5>― Dr. Seuss, Oh, the Places You'll Go!</h5>
+
+            <div id="css-and-html__div--projects-wrapper">
+                <article class="project-tile" id="css-and-html__img">
+                    <p>Just CSS ...because</p>
+                </article>
+
+                <article class="project-tile">
+                    <button type="button" class="btn btn-default" data-bs-toggle="modal" data-bs-target="#frontEndDevModal">Front End Dev</button>
+                    <a href="https://placeholder.com"><img style="width: 90%; height: auto;" src="img/FrontEndDevTile.png" /></a>
+                    <div class="modal" id="frontEndDevModal">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <a class="modal__link" href="../FED-ex/app/index.html" target="_blank">Click Here to Open in New Tab
+                                            <img id="modal__img-lg" src="img/FED16x9.png" style="width: 90%; height: auto;" /></a>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- <a id="trilogy__link" href="../Trilogy/index.html">Trilogy</a> -->
+
+                <article class="project-tile">
+                    <button type="button" class="btn btn-default" data-bs-toggle="modal" data-bs-target="#trilogyModal">SASS/Float</button>
+                    <a href="https://placeholder.com"><img style="width: 90%; height: auto;" src="img/TrilogyBlue400x600.png" /></a>
+                    <div class="modal" id="trilogyModal">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <a class="modal__link" href="../Trilogy/index.html" target="_blank">Click Here to Open in New Tab
+                                            <img id="modal__img-lg" src="img/trilogyscreen16x9.png" style="width: 90%; height: auto;" /></a>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-tile">
+                    <button type="button" class="btn btn-default" data-bs-toggle="modal" data-bs-target="#happyHeartsModal">Flexbox</button>
+                    <a href="https://placeholder.com"><img style="width: 90%; height: auto;" src="img/HappyHeartsmobilecropp.png" /></a>
+                    <div class="modal" id="happyHeartsModal">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <a class="modal__link" href="../Happy-Hearts/index.html" target="_blank">Click Here to Open in New Tab
+                                            <img id="modal__img-lg" src="img/HappyHeartsLanding16x9.png" style="width: 90%; height: auto;" /></a>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-tile">
+                    <button type="button" class="btn btn-default" data-bs-toggle="modal" data-bs-target="#emolocationModal">Grid</button>
+                    <a href="https://placeholder.com"><img style="width: 90%; height: auto;" src="img/Emonogrid2x3.png" /></a>
+                    <div class="modal" id="emolocationModal">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <a class="modal__link" href="../EmoLocation/index.html" target="_blank">Click Here to Open in New Tab
+                                            <img id="modal__img-lg" src="img/Emo16x9.png" style="width: 90%; height: auto;" /></a>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-tile">
+                    <button type="button" class="btn btn-default" data-bs-toggle="modal" data-bs-target="#peanutsModal">FCC: Landing</button>
+                    <a href="https://placeholder.com"><img style="width: 90%; height: auto;" src="img/PeanutsSmall.png" /></a>
+                    <div class="modal" id="peanutsModal">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <a class="modal__link" href="../Peanuts/index.html" target="_blank">Click Here to Open in New Tab
+                                            <img id="modal__img-lg" src="img/PeanutsLarge16x9.png" style="width: 90%; height: auto;"/></a>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-tile">
+                    <button type="button" class="btn btn-default" data-bs-toggle="modal" data-bs-target="#myModal">Fun Stuff</button>
+                    <a href="https://placeholder.com"><img style="width: 90%; height: auto;" src="https://via.placeholder.com/200x248.png?text=Project Title" /></a>
+                </article>
+                <article class="project-tile">
+                    <button type="button" class="btn btn-default" data-bs-toggle="modal" data-bs-target="#myModal">Navigation</button>
+                    <a href="https://placeholder.com"><img style="width: 90%; height: auto;" src="https://via.placeholder.com/200x248.png?text=Project Title" /></a>
+                </article>
+
+                <article class="project-tile">
+                    <button type="button" class="btn btn-default" data-bs-toggle="modal" data-bs-target="#surveyFormModal">FCC: Form</button>
+                    <a href="https://placeholder.com"><img style="width: 90%; height: auto;" src="img/SurveySmallCropped.png" /></a>
+                    <div class="modal" id="surveyFormModal">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <a class="modal__link" href="../Survey-Form/index.html" target="_blank">Click Here to Open in New Tab
+                                            <img id="modal__img-lg" src="img/SurveySmall16x9.png" style="width: 90%; height: auto;"/></a>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-tile">
+                    <button type="button" class="btn btn-default" data-bs-toggle="modal" data-bs-target="#technicalModal">FCC: Technical Doc</button>
+                    <a href="https://placeholder.com"><img style="width: 90%; height: auto;" src="img/TechDocSmall.png" /></a>
+                    <div class="modal" id="technicalModal">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <a class="modal__link" href="../Technical-Doc/index.html" target="_blank">Click Here to Open in New Tab
+                                            <img id="modal__img-lg" src="img/TechDocBigCropped.png" style="width: 90%; height: auto;"/></a>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- <article class="project-tile">
+                    <button type="button" class="btn btn-default" data-bs-toggle="modal" data-bs-target="#myModal">Fun Stuff</button>
+                    <a href="https://placeholder.com"><img style="width: 90%; height: auto;" src="https://via.placeholder.com/200x248.png?text=Project Title" /></a>
+                </article> -->
+        </section>
+
+        <section id="javascript__section">
+            <h1 id="javascript__h1">We do Star Wars programming in JawaScript.</h1>
+            <div id="javascript__div--projects-wrapper">
+                <article class="project-tile" id="javascript-project__img">
+                    <p class="btn btn-default">JavaScript</p>
+                </article>
+                <article class="project-tile">
+                    <button type="button" class="btn btn-default" data-bs-toggle="modal" data-bs-target="#myModal">Quote Maker</button>
+                    <a href="https://placeholder.com"><img style="width: 90%; height: auto;" src="img/QuoteGen2x3.png" /></a>
+                </article>
+                <article class="project-tile">
+                    <button type="button" class="btn btn-default" data-bs-toggle="modal" data-bs-target="#myModal">Animated Nav</button>
+                    <a href="https://placeholder.com"><img style="width: 90%; height: auto;" src="img/animatedNav.png" /></a>
+                </article>
+                <article class="project-tile">
+                    <button type="button" class="btn btn-default" data-bs-toggle="modal" data-bs-target="#myModal">Infinity Scroll</button>
+                    <a href="https://placeholder.com"><img style="width: 90%; height: auto;" src="img/InfiniteScrollmobile2x3.png" /></a>
+                </article>
+                <article class="project-tile">
+                    <button type="button" class="btn btn-default" data-bs-toggle="modal" data-bs-target="#myModal">Dark/Light Toggle</button>
+                    <a href="https://placeholder.com"><img style="width: 90%; height: auto;" src="img/DarkLightMode2x3.png" /></a>
+                </article>
+                <article class="project-tile">
+                    <button type="button" class="btn btn-default" data-bs-toggle="modal" data-bs-target="#myModal">Form Validation</button>
+                    <a href="https://placeholder.com"><img style="width: 90%; height: auto;" src="img/FormValidation2x3.png" /></a>
+                </article>
+                <article class="project-tile">
+                    <button type="button" class="btn btn-default" data-bs-toggle="modal" data-bs-target="#myModal">Select Favorites</button>
+                    <a href="https://placeholder.com"><img style="width: 90%; height: auto;" src="https://via.placeholder.com/200x248.png?text=Project Title" /></a>
+                </article>
+                <article class="project-tile">
+                    <button type="button" class="btn btn-default" data-bs-toggle="modal" data-bs-target="#myModal">Figma Splashpage</button>
+                    <a href="https://placeholder.com"><img style="width: 90%; height: auto;" src="https://via.placeholder.com/200x248.png?text=Project Title" /></a>
+                </article>
+                <article class="project-tile">
+                    <button type="button" class="btn btn-default" data-bs-toggle="modal" data-bs-target="#myModal">Drag and Drop</button>
+                    <a href="https://placeholder.com"><img style="width: 90%; height: auto;" src="https://via.placeholder.com/200x248.png?text=Project Title" /></a>
+                </article>
+                <article class="project-tile">
+                    <button type="button" class="btn btn-default" data-bs-toggle="modal" data-bs-target="#myModal">Countdown-Local</button>
+                    <a href="https://placeholder.com"><img style="width: 90%; height: auto;" src="img/Countdown2x3.png" /></a>
+                </article>
+                <!-- <article class="project-tile">
+                    <button type="button" class="btn btn-default" data-bs-toggle="modal" data-bs-target="#myModal">Drag and Drop</button>
+                    <a href="https://placeholder.com"><img style="width: 90%; height: auto;" src="https://via.placeholder.com/200x248.png?text=Project Title" /></a>
+                </article> -->
+            </div>
+        </section>
+
+        <section id="react__section">
+            <article id="react__article">
+                <img id="react__img--one" src="img/CryEmojiSquare.png" />
+                <div id="react__div--text-wrapper">
+                    <p>
+                        Do your functional component feel lost because they don't know what
+                        <b>state</b> they're in?
+                    </p>
+                    <p>Do your child components suffer from low self-esteem?</p>
+
+                    <p id="react__text--props">We can give them <b>props.</b></p>
+                </div>
+                <img id="react__img--two" src="img/HappyEmojiSquare.png" />
+            </article>
+
+            <div id="react__div--projects-wrapper">
+                <article class="project-tile">
+                    <button type="button" class="btn btn-default" data-bs-toggle="modal" data-bs-target="#myModal">Project Title</button>
+                    <a href="https://placeholder.com"><img style="width: 90%; height: auto;" src="https://via.placeholder.com/200x248.png?text=Project Title" /></a>
+                </article>
+                <article class="project-tile">
+                    <button type="button" class="btn btn-default" data-bs-toggle="modal" data-bs-target="#myModal">Project Title</button>
+                    <a href="https://placeholder.com"><img style="width: 90%; height: auto;" src="https://via.placeholder.com/200x248.png?text=Project Title" /></a>
+                </article>
+                <article class="project-tile">
+                    <button type="button" class="btn btn-default" data-bs-toggle="modal" data-bs-target="#myModal">Project Title</button>
+                    <a href="https://placeholder.com"><img style="width: 90%; height: auto;" src="https://via.placeholder.com/200x248.png?text=Project Title" /></a>
+                </article>
+                <article class="project-tile">
+                    <button type="button" class="btn btn-default" data-bs-toggle="modal" data-bs-target="#myModal">Project Title</button>
+                    <a href="https://placeholder.com"><img style="width: 90%; height: auto;" src="https://via.placeholder.com/200x248.png?text=Project Title" /></a>
+                </article>
+                <article class="project-tile">
+                    <button type="button" class="btn btn-default" data-bs-toggle="modal" data-bs-target="#myModal">Project Title</button>
+                    <a href="https://placeholder.com"><img style="width: 90%; height: auto;" src="https://via.placeholder.com/200x248.png?text=Project Title" /></a>
+                </article>
+            </div>
+        </section>
+
+        <section id="profile__section">
+            <a class="profile-link" href="https://github.com/ColleenWoolsey" target="_blank">github<i class="material-icons.md-48"></i></a>
+            <a class="profile-link" href="https://www.facebook.com/colleen.woolsey.9" target="_blank">facebook<i class="material-icons.md-48"></i></a>
+            <a class="profile-link" href="https://www.linkedin.com/in/colleen-woolsey/" target="_blank">linkedin<i class="material-icons.md-48"></i></a>
+        </section>
+    </main>
+</body>
+
+</html>

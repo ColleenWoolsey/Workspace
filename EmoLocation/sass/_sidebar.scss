@@ -1,0 +1,50 @@
+.sidebar {
+    background-color: rgba($color-primary, .9);
+    // background: linear-gradient(to bottom, rgba($color-primary, .9) 0%, $color-grey-light-1 100%);
+    grid-column: sidebar-start / sidebar-end;
+    grid-row: 1 / -1;
+    display: flex;
+    justify-content: center;
+    @media only screen and (max-width: $breakpoint-large) {
+        grid-column: 1 / -1;
+        // no longer sidebar size but from start to end of container
+        grid-row: 1 / 2;
+        // row is from line 1 to line 2
+        justify-content: flex-end;
+        align-items: center;
+        // the menu icon is in middle so move it to end and center vertically
+    }
+}
+
+.nav-btn {
+    border: none;
+    border-radius: 0;
+    background-color: #fff;
+    height: 2px;
+    width: 4.5rem;
+    margin-top: 4rem;
+    &::before,
+    &::after {
+        background-color: #fff;
+        height: 2px;
+        width: 4.5rem;
+        content: "";
+        display: block;
+    }
+    &::before {
+        transform: translateY(-1.5rem);
+    }
+    &::after {
+        transform: translateY(1.3rem);
+    }
+    @media only screen and (max-width: $breakpoint-large) {
+        margin-top: 0;
+        margin-right: 3rem;
+        &::before {
+            transform: translateY(-1.2rem);
+        }
+        &::after {
+            transform: translateY(1rem);
+        }
+    }
+}

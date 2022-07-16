@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+
+    <title>Happy Hearts &mdash; Somalia</title>
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <img src="img/HappyHeartsLogoH1.png" alt="happy hearts logo" class="logo" />
+
+            <form action="#" class="search">
+                <input type="text" class="search__input" placeholder="Search" />
+                <button class="search__button">
+            <img
+              class="search_icon"
+              src="img/SVG/magnifying-glass.svg"
+              alt="Magnifying glass SVG"
+            />
+          </button>
+            </form>
+
+            <nav class="user-nav">
+                <div class="user-nav__icon-box">
+                    <img class="user-nav__icon" src="img/SVG/bookmark.svg" alt="Bookmark SVG" />
+                    <span class="user-nav__notification">7</span>
+                </div>
+                <div class="user-nav__icon-box">
+                    <img class="user-nav__icon" src="img/SVG/chat.svg" alt="Chat SVG" />
+                    <span class="user-nav__notification">13</span>
+                </div>
+                <div class="user-nav__user">
+                    <img src="img/user-resize.jpg" alt="User photo" class="user-nav__user-photo" />
+                    <span class="user-nav__user-name">CDub</span>
+                </div>
+            </nav>
+        </header>
+
+        <div class="content">
+            <nav class="sidebar">
+                <ul class="side-nav">
+                    <li class="side-nav__item side-nav__item--active">
+                        <!-- The first li has the active state -->
+                        <a href="#" class="side-nav__link">
+                            <span>Emergency Aid</span>
+                        </a>
+                    </li>
+                    <li class="side-nav__item">
+                        <a href="#" class="side-nav__link">
+                            <span>Children's Home</span>
+                        </a>
+                    </li>
+                    <li class="side-nav__item">
+                        <a href="#" class="side-nav__link">
+                            <span>Learning Center</span>
+                        </a>
+                    </li>
+                    <li class="side-nav__item">
+                        <a href="#" class="side-nav__link">
+                            <span>Trauma Healing</span>
+                        </a>
+                    </li>
+                    <li class="side-nav__item">
+                        <a href="#" class="side-nav__link">
+                            <span>Playground Project</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="legal">
+                    &copy; 2022 by C-dub. All rights reserved.
+                </div>
+            </nav>
+
+            <main class="emergency-view">
+                <div class="gallery">
+                    <!-- figure allows for adding a caption -->
+                    <figure class="gallery__item">
+                        <img src="img/Ania800x800.png" alt="Photo of Somalia" class="gallery__photo" />
+                    </figure>
+                    <figure class="gallery__item">
+                        <img src="img/SomaliaCity1200x800.png" alt="Photo of NGO founder" class="gallery__photo" />
+                    </figure>
+                    <figure class="gallery__item">
+                        <img src="img/WomanTentCR1111x800.png" alt="Photo of Food for Kidz" class="gallery__photo" />
+                    </figure>
+                </div>
+
+                <div class="overview">
+                    <h1 class="overview__heading">You can save a life today</h1>
+
+                    <div class="overview__location">
+                        <img class="overview__icon-location" src="img/SVG/location-pin.svg" alt="Location Pin SVG" />
+                        <button class="btn-inline">Mogadishu, Somalia</button>
+                    </div>
+
+                    <div class="overview__donations">
+                        <div class="overview__percentage">54%</div>
+                        <div class="overview__donor-count">429 donors</div>
+                    </div>
+                </div>
+
+                <div class="detail">
+                    <div class="description">
+                        <p class="paragraph">
+                            What a joy and privilege it is to be part of such incredible stories!
+                        </p>
+                        <ul class="list">
+                            <li class="list__item">
+                                Little Abdi was buried alive by a traumatized mother fleeing for her life. He was found in time to save his life and today he is healthy, happy and full of smiles.
+                            </li>
+                            <li class="list__item">
+                                Amina was found by the side of the road shortly after she was born.
+                            </li>
+                            <li class="list__item">
+                                Our two year old Mohamed survived a late abortion attempt, was thrown away on a trash pile in a plastic bag and was being eaten by wild dogs when he was found. Miraculously, today he is completely healthy and full of boundless energy and joy, thriving
+                                in the home of a loving family.
+                            </li>
+                        </ul>
+                        <div class="recommend">
+                            <p class="recommend__count">
+                                Lucy and 3 other friends donate to this NGO.
+                            </p>
+                            <div class="recommend__friends">
+                                <img src="img/user-3.jpg" alt="Friend 1" class="recommend__photo" />
+                                <img src="img/user-4.jpg" alt="Friend 2" class="recommend__photo" />
+                                <img src="img/user-5.jpg" alt="Friend 3" class="recommend__photo" />
+                                <img src="img/user-6.jpg" alt="Friend 4" class="recommend__photo" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="donations">
+                        <figure class="donation">
+                            <blockquote class="donation__text">
+                                My donation saved the life of a child. Enough said!
+                            </blockquote>
+                            <figcaption class="donation__donor">
+                                <img src="img/user-1.jpg" alt="Donor 1" class="donation__photo" />
+                                <div class="donation__donor-box">
+                                    <p class="donation__donor-name">Nick Smith</p>
+                                    <p class="donation__donor-date">Feb 23rd, 2022</p>
+                                </div>
+                            </figcaption>
+                        </figure>
+
+                        <figure class="donation">
+                            <blockquote class="donation__text">
+                                My gift was not only well stewarded, but miraculously multilplied.
+                            </blockquote>
+                            <figcaption class="donation__donor">
+                                <img src="img/user-2.jpg" alt="Donor 2" class="donation__photo" />
+                                <div class="donation__donor-box">
+                                    <p class="donation__donor-name">Mary Thomas</p>
+                                    <p class="donation__donor-date">Sept 13th, 2021</p>
+                                </div>
+                            </figcaption>
+                        </figure>
+
+                        <figure class="donation">
+                            <blockquote class="donation__text">
+                                Happy Hearts is claiming a country for Jesus.
+                            </blockquote>
+                            <figcaption class="donation__donor">
+                                <img src="img/Heidisq128.png" alt="Donor 2" class="donation__photo" />
+                                <div class="donation__donor-box">
+                                    <p class="donation__donor-name">Heidi Baker</p>
+                                    <p class="donation__donor-date">Dec 11th, 2021</p>
+                                </div>
+                            </figcaption>
+                        </figure>
+
+                        <button class="btn-inline">Show all <span>&rarr;</span></button>
+                        <!-- put it in a span element for animation where text moves away from the arrow -->
+                    </div>
+                </div>
+
+                <div class="cta">
+                    <h2 class="cta__donate-now">
+                        Join the fight against death, hunger, and hopelessness!
+                    </h2>
+                    <button class="btn">
+                <span class="btn__visible">Rescue. Heal. Rebuild.</span>
+                <span class="btn__invisible">Only 44% left to go!</span></button>
+                </div>
+        </div>
+        </main>
+    </div>
+    </div>
+</body>
+
+</html>

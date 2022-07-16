@@ -1,0 +1,435 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+@media (min-width: 1800px) {
+    html {
+        font-size: 70%;
+    }
+}
+
+@media (max-width: 1200px) {
+    html {
+        font-size: 62.5%;
+    }
+}
+
+@media (max-width: 900px) {
+    html {
+        font-size: 56.25%;
+    }
+}
+
+@media (max-width: 600px) {
+    html {
+        font-size: 50%;
+    }
+}
+
+main {
+    max-width: 120rem;
+    margin: 0 auto;
+    min-width: 100%;
+    font-family: "Montserrat", sans-serif;
+}
+
+.modal-body a {
+    text-decoration: none;
+    font-size: 1.8rem;
+    color: red;
+    font-weight: 500;
+}
+
+#navbar {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: fixed;
+    top: 0;
+    left: 0;
+    line-height: 3rem;
+    background-color: black;
+    color: white;
+    font-weight: 300;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: white;
+}
+
+@media (min-width: 1800px) {
+    .nav-link {
+        padding: 1.5rem 0;
+    }
+}
+
+@media (max-width: 1200px) {
+    .nav-link {
+        padding: 1rem 0;
+    }
+}
+
+@media (max-width: 450px) {
+    .nav-link {
+        padding: .3rem 0;
+    }
+}
+
+nav a:link {
+    text-decoration: none;
+}
+
+.nav-link:visited,
+.nav-link:active {
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+    color: #EDEADE;
+}
+
+h1 {
+    font-size: 3.2rem;
+}
+
+h2 {
+    font-size: 2.4rem;
+}
+
+p {
+    font-size: 1.6rem;
+}
+
+#welcome__section {
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(-110deg, rgba(255, 245, 238, 0.5), rgba(250, 249, 246, 0.7), rgba(233, 220, 201, 0.8));
+    /* background-color: #EDEADE; */
+}
+
+#welcome-info__images {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: #718ae7;
+    align-items: center;
+    width: 40%;
+    height: 100vh;
+    border-right: 2rem ridge #5b78e4;
+    border-left: 2rem groove #5b78e4;
+    /*   border: 4mm ridge rgba(211, 220, 50, 0.6); */
+}
+
+.welcome-info__img--one {
+    max-width: 70%;
+    height: auto;
+    border: 0.5rem outset gray;
+    /*   outline: 0.5rem solid #c9d2f6; */
+    outline: 1rem solid #E9DCC9;
+    box-shadow: 0 0 0 2rem #4566e0;
+    border-radius: 12px;
+    outline-offset: 0.5rem;
+    z-index: 5;
+}
+
+@media (max-width: 900px) {
+    .welcome-info__img--one {
+        display: none;
+    }
+}
+
+#welcome-info__article {
+    flex: 1;
+    padding: 3rem 3rem;
+    margin-top: 3rem;
+}
+
+@media (max-width: 900px) {
+    #welcome-info__article {
+        flex: 1 0 100%;
+    }
+}
+
+#welcome-info__article h1,
+h2 {
+    color: #5b78e4;
+    font-weight: 600;
+    padding-bottom: 1rem;
+}
+
+#css-and-html__section {
+    width: 100%;
+    text-align: center;
+    background-image: linear-gradient(to bottom, rgba(113, 138, 231, 0.8), rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.9), white), url(../img/DrSeussColorsScreenEdited.png);
+    background-size: 100% auto;
+}
+
+blockquote {
+    font-size: 1.8rem;
+    padding: 6rem 1rem 0 1rem;
+    font-weight: 600;
+}
+
+#css-and-html__div--projects-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 600px) {
+    #css-and-html__div--projects-wrapper {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+}
+
+#css-and-html__div--projects-wrapper p {
+    background-color: white;
+}
+
+.project-tile {
+    width: 220px;
+    height: 370px;
+    border: 0.5rem outset gray;
+    outline: 0.25rem solid black;
+    box-shadow: 0 0 0 1rem white;
+    border-radius: 12px;
+    outline-offset: 0.5rem;
+    margin-top: 4rem;
+}
+
+#modal__img-lg {
+    max-width: 750px;
+    height: auto;
+}
+
+.btn {
+    margin: 1rem auto;
+    color: black;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.btn:visited {
+    background-color: white;
+    border: 2px solid gray;
+}
+
+.btn:hover {
+    color: white;
+    background-color: gray;
+    border: 2px solid gray;
+}
+
+.btn-default {
+    margin: 1rem auto;
+    color: black;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.btn-default:visted {
+    background-color: white;
+    border: 2px solid gray;
+}
+
+
+/* #34D1C6,#EFB607,#B0AACE,#FFFA40,#F481AC */
+
+#css-and-html__div--projects-wrapper article {
+    margin: 2rem 2rem;
+}
+
+#css-and-html__div--projects-wrapper article:first-of-type {
+    box-shadow: 0 0 0 1rem #fa87d7;
+}
+
+#css-and-html__div--projects-wrapper article:nth-of-type(2) {
+    box-shadow: 0 0 0 1rem #6fbee7;
+}
+
+#css-and-html__div--projects-wrapper article:nth-of-type(3) {
+    box-shadow: 0 0 0 1rem #82187B;
+}
+
+#css-and-html__div--projects-wrapper article:nth-of-type(4) {
+    box-shadow: 0 0 0 1rem #188246;
+}
+
+#css-and-html__div--projects-wrapper article:nth-of-type(5) {
+    box-shadow: 0 0 0 1rem #ffc857;
+}
+
+#css-and-html__div--projects-wrapper article:nth-of-type(6) {
+    box-shadow: 0 0 0 1rem #fe3c32;
+}
+
+#css-and-html__div--projects-wrapper article:nth-of-type(7) {
+    box-shadow: 0 0 0 1rem #008080;
+}
+
+#css-and-html__div--projects-wrapper article:nth-of-type(8) {
+    box-shadow: 0 0 0 1rem #faaa87;
+}
+
+#css-and-html__div--projects-wrapper article:nth-of-type(9) {
+    box-shadow: 0 0 0 1rem #c187fa;
+}
+
+#css-and-html__div--projects-wrapper article:last-of-type {
+    box-shadow: 0 0 0 1rem #718ae7;
+}
+
+#css-and-html__section .project-tile {
+    background-color: white;
+}
+
+article p {
+    line-height: 2rem;
+    margin: 0 auto;
+}
+
+.project-img {
+    width: 100%;
+}
+
+#css-and-html__img {
+    background-image: url(../img/CssAwesomeCropped.png);
+    background-repeat: no-repeat;
+    background-size: 200px;
+    background-position: center;
+}
+
+#javascript__section {
+    background-image: url("../img/DarthCropped.png");
+    background-size: cover;
+    border: 2px solid black;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 6rem;
+    padding-top: 6rem;
+    color: white;
+}
+
+#javascript-project__img {
+    background-image: url("../img/JavascriptCropped.png");
+    background-repeat: no-repeat;
+    background-size: 150px;
+    background-position: center;
+}
+
+#javascript__h1 {
+    padding-top: 3rem;
+    border: none;
+}
+
+#javascript__div--projects-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    color: white;
+}
+
+#javascript__div--projects-wrapper article {
+    margin: 2rem 2rem;
+}
+
+@media (max-width: 600px) {
+    #javascript__div--projects-wrapper {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+}
+
+#react__section {
+    background-image: url("");
+    width: 100%;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: black;
+}
+
+#react__article {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+#react__img--one {
+    max-width: 150px;
+    height: auto;
+    padding-bottom: 1rem;
+}
+
+#react__text--props {
+    color: red;
+    padding: 0.5em;
+}
+
+#react__img--two {
+    max-width: 150px;
+    height: auto;
+    padding: 0.25em 0;
+}
+
+#react__div--projects-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    color: black;
+}
+
+@media (max-width: 600px) {
+    #react__div--projects-wrapper {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+}
+
+#profile__section {
+    background-color: gray;
+    font-weight: 500;
+    line-height: 4em;
+    display: flex;
+    justify-content: space-around;
+}
+
+.profile-link {
+    text-decoration: none;
+    color: white;
+}
+
+.material-icons.md-48 {
+    padding: 10px;
+    font-size: 96px;
+    width: 96px;
+    text-decoration: none;
+    margin: 20px 120px;
+}

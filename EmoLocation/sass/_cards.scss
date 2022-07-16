@@ -1,0 +1,71 @@
+.cards {
+    background-color: $color-grey-light-1;
+    grid-column: center-start / center-end;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    grid-column-gap: 2vw;
+    grid-row-gap: 6vw;
+    margin: 6vw 0;
+}
+
+.card {
+    background-color: $color-grey-light-1;
+    // padding: 0 2vw;
+    text-align: center;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    display: grid;
+    grid-row-gap: .5rem;
+    grid-template-rows: 2;
+    &__name {
+        background-color: $color-secondary-medium;
+        opacity: .9;
+        font-family: $font-display;
+        font-weight: 400;
+        font-size: 3rem;
+        font-style: italic;
+        line-height: 3;
+        color: $color-grey-light-1;
+    }
+    &__benefit {
+        background-color: $color-secondary-dark;
+        opacity: .5;
+        font-family: $font-display;
+        font-weight: 400;
+        font-size: 1.4rem;
+        color: $color-primary;
+        text-transform: uppercase;
+        padding: .9rem 1.5rem;
+        // margin-bottom: 1rem;
+        // margin-top: 1rem;
+    }
+    &__impairment {
+        background-color: $color-primary-dark;
+        opacity: .5;
+        font-family: $font-display;
+        font-weight: 400;
+        font-size: 1.7rem;
+        color: $color-grey-light-1;
+        padding: .9rem 1.5rem;
+        // margin-bottom: 1rem;
+    }
+    // &__summary {
+    //     font-family: $font-primary;
+    //     font-weight: 600;
+    //     color: black;
+    //     font-size: 1.1rem;
+    //     text-align: left;
+    //     margin-bottom: 1rem;
+    // }
+    &__btn {
+        background-color: $color-tertiary-dark;
+        opacity: .9;
+        font-family: $font-display;
+        font-weight: 400;
+        font-size: 1.3rem;
+        margin-bottom: 1vw;
+        width: 100%;
+        height: 5rem;
+        grid-row: 5 / 6;
+        align-self: end;
+    }
+}

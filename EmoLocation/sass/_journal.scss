@@ -1,0 +1,86 @@
+.journal {
+    &__pictures {
+        background-color: $color-primary;
+        grid-column: full-start / col-end 4;
+        // background: linear-gradient(rgba($color-primary, .9), rgba($color-grey-light-1, 1));
+        background-image: linear-gradient(to right, rgba($color-primary, .9), rgba($color-grey-light-1, 1)), url(../img/treespiral-sm2.jpg);
+        background-size: cover;
+        display: grid;
+        grid-template-rows: repeat(6, 1fr) 8vw;
+        grid-template-columns: repeat(6, 1fr);
+        align-items: center;
+        @media only screen and (max-width: $breakpoint-medium) {
+            grid-column: 1 / -1;
+            padding: 2vw;
+        }
+    }
+    &__img--1 {
+        width: 100%;
+        opacity: .6;
+        grid-row: 2 / 6;
+        grid-column: 2 / 6;
+        box-shadow: 0 2rem 5rem rgba(#000, .1);
+        @media only screen and (max-width: $breakpoint-medium) {
+            grid-column: 1 / -1;
+            grid-row: 1 / -1;
+        }
+    }
+    &__img--2 {
+        filter: brightness(115%);
+        width: 110%;
+        grid-row: 5 / 7;
+        grid-column: 4 / 7;
+        z-index: 20;
+        // border: 1px dashed $color-grey-light-1;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+        background: linear-gradient(to bottom, $color-primary 100%, $color-grey-light-1 100%);
+        opacity: .8;
+        @media only screen and (max-width: $breakpoint-medium) {
+            box-shadow: rgba(255, 244, 221, 0.35) 0px 10px 15px;
+            grid-column: 2 / 6;
+            grid-row: 1 / -1;
+            width: 100%;
+            // instead of 115%
+            opacity: .7;
+        }
+    }
+    &__content {
+        // display: flex;
+        // flex-direction: column;
+        // justify-content: center;
+        display: grid;
+        align-content: center;
+        justify-items: start;
+        @media only screen and (max-width: $breakpoint-medium) {
+            grid-column: 1 / -1;
+            grid-row: 5 / 6;
+            // moves content above pictures
+            padding: 4vw;
+        }
+        // background-color: $color-grey-light-1;
+        background-image: linear-gradient(to left, rgba($color-primary, .3), rgba($color-grey-light-1, 1));
+        background-size: cover;
+        grid-column: col-start 5 / full-end;
+        padding: 6vw;
+        position: relative;
+        &::before {
+            // This is a decorative left quotation mark img that comes "before" the quote"
+            content: "\201C";
+            position: absolute;
+            top: -2.25rem;
+            left: .5rem;
+            line-height: 1;
+            font-size: 20rem;
+            color: white;
+            font-family: sans-serif;
+            z-index: 1;
+            // z-index only works if set position
+            opacity: .5;
+        }
+    }
+    &__text {
+        font-size: 1.5rem;
+        font-style: italic;
+        margin-bottom: .25rem;
+    }
+}

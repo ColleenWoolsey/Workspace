@@ -1,0 +1,72 @@
+/* COLOR VARIABLES */
+
+
+/* $color-primary: #ffc857;
+$color-primary-dark: rgb(51, 40, 17);
+$color-secondary-medium: rgb(23, 126, 137);
+$color-secondary-dark: rgb(8, 76, 97);
+$color-background-black: #323031;
+$color-tertiary-accent: #db3a34;
+$color-tertiary-light: #e3645f;
+$color-tertiary-dark: rgb(165, 34, 29);
+$color-grey-light-0: #fff8eb;
+$color-grey-light-1: rgb(255, 244, 221);
+$color-grey-light-2: #ffde9a;
+$color-grey-dark-1: #b28c3c;
+$color-grey-dark-2: #665022;
+// FONT VARIABLES
+$font-primary: 'Nunito',
+sans-serif;
+$font-display:'Josefin Sans',
+sans-serif;
+// RESPONSIVE BREAKPOINTS
+$breakpoint-largest: 75em; // 1200px (1200px / 16px = 75)
+$breakpoint-large: 62.5em; // 1000px
+$breakpoint-medium: 50em; // 800px;
+$breakpoint-small: 37.5em; // 600px; */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    /* 1 rem = 10px (default) */
+    @media only screen and (max-width: $breakpoint-largest) {
+        font-size: 50%;
+    }
+}
+
+body {
+    min-height: 100vh;
+    /* background-color: $color-grey-light-1;
+    font-family: $font-primary;
+    color: $color-grey-dark-2;
+    font-weight: 300;
+    line-height: 1.6; */
+}
+
+.container {
+    /* display: grid;
+    grid-template-rows: 90vh min-content 40vw repeat(3, min-content);
+    // sidebar(8rem) plus 8 columns of 14rem plus an adjustable column on either side of the eight columns because don't want 8 columns centered in viewport but in the remaining space after the sidebar
+    // [sidebar-end full-start] minmax(6rem, 1fr) ==> Once the 2 expandable columns on ends are shrunk to zero the "margin" disappears, so give these columns a minimum size of 6 rem with minmax function
+    grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+    @media only screen and (max-width: $breakpoint-large) {
+        // 90vh min-content 40vw repeat(3, min-content);
+        grid-template-rows: 6rem 90vh min-content 40vw repeat(3, min-content);
+        // added a new row (6 rem) to put sidebar on top and removed the first column
+        // change 40vw to min-content because want content to decide height of row
+        grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+    }
+    @media only screen and (max-width: $breakpoint-medium) {
+        // grid-template-rows: 6rem calc(100vh - 6rem) min-content min-content min-content repeat(3, min-content);
+        grid-template-rows: 6rem calc(100vh - 6rem);
+        // automatic placement means can get rid of all the min-contents
+    } */
+}

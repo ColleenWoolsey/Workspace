@@ -1,0 +1,42 @@
+.util__text-center {
+    text-align: center !important;
+}
+
+// Make element inline-block and set align text (or element) in parent wrapper as center
+.util__margin-bottom--small {
+    margin-bottom: 1rem !important;
+}
+
+.util__margin-bottom--medium {
+    margin-bottom: 3rem !important;
+    @include respond(tab-port) {
+        margin-bottom: 3rem !important;
+    }
+}
+
+.util__margin-bottom--big {
+    margin-bottom: 6rem !important;
+    @include respond(tab-port) {
+        margin-bottom: 5rem !important;
+    }
+}
+
+.util__margin-bottom--huge {
+    margin-bottom: 8rem !important;
+}
+
+.util__margin-top--small {
+    margin-top: 1rem !important;
+}
+
+.util__margin-top--medium {
+    margin-top: 3rem !important;
+}
+
+.util__margin-top--big {
+    margin-top: 6rem !important;
+}
+
+.util__margin-top--huge {
+    margin-top: 8rem !important;
+}

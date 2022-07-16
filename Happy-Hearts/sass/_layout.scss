@@ -1,0 +1,102 @@
+.container {
+    max-width: 120rem;
+    // space it occupies can decrease if not enough space to display 120rem
+    margin: 0 auto;
+    // centers in container
+    background-color: var(--color-grey-light-1);
+    box-shadow: var(--shadow-dark);
+    min-height: 50rem;
+    @media only screen and (max-width: $breakpoint-largest) {
+        margin: 0;
+        // No margin needed as fills entire viewport at 1200px
+        // At 100px detals start to warp so lower font size (in base.scss in HTML)
+        max-width: 100%;
+        // now 960px - 120rem(width of container) x 8px(reduced font-size to 50%) = 960px
+        width: 100%;
+    }
+}
+
+.header {
+    font-size: 1.4rem;
+    //set font-size so placeholder can inherit
+    height: 8rem;
+    background-color: var(--color-primary3-dark);
+    border-bottom: var(--line);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media only screen and (max-width: $breakpoint-smallest) {
+        flex-wrap: wrap;
+        align-content: space-around;
+        height: 7.5rem;
+    }
+}
+
+.content {
+    display: flex;
+    // at 900px the photos start to wrap so change flex direction in content to column so sidebar and emergency-view stack and then make nav items horizontal
+    @media only screen and (max-width: $breakpoint-medium) {
+        flex-direction: column;
+    }
+}
+
+.sidebar {
+    background-color: var(--color-nav);
+    // flex-grow: 0; - Don't want item to grow past defined width if there's some space
+    // flex-shrink: 0; - Don't want item to shrink if not enough space - so define width by % not px
+    // flex-basis: 18%; - defines constant width
+    flex: 0 0 18%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.emergency-view {
+    background-color: var(--color-primary3-light);
+    flex: 1;
+    // want this section to occupy all the remaining space
+    // It contains the flex container overview
+}
+
+.detail {
+    display: flex;
+    // to put dexcription and reviews side by side
+    padding: 4.5rem;
+    background-color: var(--color-grey-light-3);
+    border-bottom: var(--line);
+    font-size: 1.4rem;
+    // put it on parent so applies to description and donations
+    @media only screen and (max-width: $breakpoint-medium) {
+        padding: 3rem;
+    }
+    @media only screen and (max-width: $breakpoint-small) {
+        flex-direction: column;
+    }
+}
+
+.description {
+    background-color: var(--color-grey-light-1);
+    box-shadow: var(--shadow-light);
+    padding: 3rem;
+    // Usually when using a % for width set grow and shrink to 0
+    flex: 0 0 60%;
+    margin-right: 4.5rem;
+    // right margin so that "gutter" matches padding of detail container
+    @media only screen and (max-width: $breakpoint-medium) {
+        padding: 2rem;
+        margin-right: 3rem;
+    }
+    @media only screen and (max-width: $breakpoint-small) {
+        margin-right: 0;
+        margin-bottom: 3rem;
+    }
+}
+
+.donations {
+    // Want this one to occupy remaing space so set flex to 1
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // Do this to align inline button at bottom because align-text would move all the text - so make it a flex container. Also the items are set to stretch, so makes the underline under "Show-all" go all the way across column
+}

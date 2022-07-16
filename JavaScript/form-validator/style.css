@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css?family=Sen&display=swap");
+html {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Sen, sans-serif;
+    letter-spacing: 2px;
+    /* Good for labels and titles */
+    display: flex;
+    align-items: center;
+    /* aligns card on vertical axis */
+    justify-content: center;
+    /* aligns cardon horizontal axis */
+    background: #c9ced3;
+}
+
+.container {
+    /* Want it to look like a card */
+    width: 20rem;
+    height: 32rem;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 5px 30px 10px rgba(0, 0, 0, 0.4);
+    /* 1. horizntal offset (left to right) - set to zero because only want shadow going top to bottom */
+    /* 2. vertical offset (top to bottom) - positive value means the shadow on the bottom - negative value, shadow on top. */
+    /* 3. blur (how far out color will blur) - If zero, 5px of solid colored border. 30px is see thru and subtle */
+    /* 4. spread (overall size of shadoe) - How far extends from object */
+    /* 5. color */
+}
+
+h1 {
+    font-size: 1.75rem;
+}
+
+
+/* Form */
+
+form {
+    width: 90%;
+}
+
+.form-group {
+    /* parent div wrapping each label/input */
+    height: 3rem;
+    margin-bottom: 3px;
+}
+
+label {
+    position: relative;
+    bottom: 1px;
+    font-size: .75rem;
+}
+
+input {
+    width: 100%;
+    /* of the 90% */
+    height: 1.5rem;
+    padding: 4px;
+    border: 1px solid black;
+    /* Using border to change color based on validity of input therefore don't want an outline */
+    border-radius: 5px;
+    outline: none;
+    box-sizing: border-box;
+    /* Adding the 5px padding pushes the input toward the right without border-box */
+    transition: all 0.3s;
+}
+
+
+/* the valid pseudo class - https://developer.mozilla.org/en-US/docs/Web/CSS/:valid */
+
+input:valid {
+    border: 1px solid green;
+}
+
+input:invalid {
+    border: 1px solid red;
+}
+
+button {
+    cursor: pointer;
+    color: white;
+    background: black;
+    border: none;
+    border-radius: 5px;
+    height: 40px;
+    width: 100%;
+    font-family: Sen, sans-serif;
+    /* Buttons and input have a default font need to override */
+    font-size: 18px;
+    letter-spacing: 2px;
+    margin-top: 5px;
+}
+
+button:hover {
+    filter: brightness(200%);
+    background: rgb(22, 22, 22);
+}
+
+button:focus {
+    outline: none;
+}
+
+.message-container {
+    border: 1px solid black;
+    /* Not a valid input - can't use pseudo class to change color so need to use JS to change it */
+    border-radius: 5px;
+    width: 90%;
+    /* Outside of form so match width to form width */
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    color: black;
+}

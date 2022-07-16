@@ -1,0 +1,83 @@
+    .section-intro {
+        background-image: linear-gradient(to bottom, $color-body-background, $color-blue-dark-3);
+        background-size: cover;
+        margin-top: -5rem;
+        padding: 5rem 5rem 20rem 5rem;
+        @include respond(tab-port) {
+            padding: 5rem 3rem 70rem 5rem;
+        }
+        @include respond(phone) {
+            padding: 3rem 1rem 30rem 1rem;
+        }
+        &:first-child {
+            color: $color-dark;
+        }
+    }
+    
+    .section-features {
+        min-height: 100%;
+        padding: 18% 0;
+        // @include respond(tab-port) {
+        //     padding: 9% 0;
+        // }
+        background-image: linear-gradient(to right bottom, rgba($color-blue-light-1, 0.2), rgba($color-blue-dark-3, 0.4)), url(../img/Outerspace16x9.png);
+        background-size: cover;
+    }
+    
+    .section-reviews {
+        margin-top: 0;
+        position: relative;
+        padding: 10rem 0;
+        color: rgba($color-black, .9);
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        // have to define some sort of size for video
+        @include respond(phone) {
+            padding: 1rem;
+        }
+    }
+    
+    .section-purchase {
+        background-image: linear-gradient(to bottom, rgba($color-blue-dark-3, 1), rgba($color-dark, .5));
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        margin-top: 0;
+    }
+    
+    .section-signup {
+        height: 80%;
+        margin: 0 auto;
+        padding: 2rem 0;
+        @include respond(tab-port) {
+            padding: 1rem 0;
+        }
+        background-image: linear-gradient(to top, rgba($color-blue-dark-3, 1), rgba($color-dark, .5));
+    }
+    
+    .signup {
+        background-image: linear-gradient(105deg, rgba($color-white, .9) 0%, rgba($color-white, .9) 50%, transparent 50%), url(../img/planets16x9.png);
+        //Linear grdient is on top of 2nd background (img), separated by a comma. 90 degrees is left to right
+        // At 0% it's first color
+        // at 50% want second white
+        // If put 2nd and third color (transparent) at same percentage get a solid line instead of a gradient
+        background-size: 100%;
+        // It occupies entire width - Change to background cover in tab-land
+        border-radius: 3px;
+        box-shadow: 0 1.5rem 3rem rgba($color-black, .2);
+        @include respond(tab-land) {
+            background-image: linear-gradient(105deg, rgba($color-white, .8) 0%, rgba($color-white, .8) 65%, transparent 65%), url(../img/planets16x9.png);
+            background-size: cover;
+        }
+        @include respond(tab-port) {
+            background-image: linear-gradient(to right, rgba($color-white, .8) 0%, rgba($color-white, .8) 100%), url(../img/planets16x9.png);
+        }
+        &__form {
+            width: 50%;
+            padding: 2rem;
+            @include respond(tab-land) {
+                width: 65%;
+            }
+            @include respond(tab-port) {
+                width: 100%;
+            }
+        }
+    }

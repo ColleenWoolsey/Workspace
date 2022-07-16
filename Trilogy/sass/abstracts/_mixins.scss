@@ -1,0 +1,64 @@
+@mixin clearfix {
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+//Use clearfix so the element doesn't collapse into no space
+// clearfix appends a pseudo element after the element which clears the floats - both float left and right
+// If don't say content, pseudo element will not appear on the page
+// But want it empty "" because don't want to see the pseudo element
+@mixin absCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+// MEDIA QUERY MANAGER
+// INSTEAD OF HAVING ONE BIG MEDIA QUERY FOR EACH BREAKPOINT (in _base.scss), ADDING MEDIA QUERY INTO EACH SELECTOR
+// ================================================================================================================
+// Writing it as a mixin also allows for changing of breakpoint
+// 0 - 600px:      Phone
+// 600 - 900px:    Tablet portrait
+// 900 - 1200px:   Tablet landscape
+// [1200 - 1800] is where our normal styles apply
+// 1800px + :      Big desktop
+// $breakpoint arguement choices:
+// - phone
+// - tab-port
+// - tab-land
+// - big-desktop
+// ORDER: Base + typography > general layout + grid > page layout > components
+// 1em = 16px
+@mixin respond($breakpoint) {
+    @if $breakpoint==phone {
+        @media only screen and (max-width: 37.5em) {
+            @content
+        }
+        ; //600px
+    }
+    @if $breakpoint==tab-port {
+        @media only screen and (max-width: 56.25em) {
+            @content
+        }
+        ; //900px
+    }
+    @if $breakpoint==tab-land {
+        @media only screen and (max-width: 75em) {
+            @content
+        }
+        ; //1200px
+    }
+    @if $breakpoint==big-desktop {
+        @media only screen and (min-width: 112.5em) {
+            @content
+        }
+        ; //1800
+    }
+}
+
+// The first 3 media queries are based on desk-top size - Happen when the MAX-width is less than 600, 900, 1200px
+// The big-desktop is a MIN-width query. When the screen size has a minimum width of 1200px to infinity, use this code

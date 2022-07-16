@@ -1,0 +1,68 @@
+.popup {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 10vh;
+    left: 0;
+    background-color: rgba($color-blue-dark-1, .9);
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s;
+    @include respond(tab-port) {
+        width: 100%;
+        height: auto;
+        top: 25%;
+        padding: 10rem 0;
+    }
+    &__content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        // comes in from nothing
+        width: 100%;
+        height: auto;
+        background-color: $color-blue-light-1;
+        border: 5px solid $color-white;
+        box-shadow: 0 2rem 4rem rgba($color-black, .4);
+        border-radius: 5px;
+        opacity: 0;
+        transition: all .5s .2s;
+    }
+    &__link,
+    &__img {
+        margin-left: 4.5%;
+        padding: 4rem 0;
+        &:hover {
+            transform: scale(1.1);
+        }
+        @include respond(tab-port) {
+            padding: 10rem 0;
+        }
+    }
+    //Open states ... popup:target and popup__content:target - Need to make them visible
+    &:target {
+        opacity: 1;
+        visibility: visible;
+    }
+    &:target &__content {
+        // When the popup is the target can select the child element to style
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    // popup__close references the absolutrly positioned close button
+    &__close {
+        &:link,
+        &:visited {
+            color: $color-black;
+            font-size: 5rem;
+            font-weight: 700;
+            text-decoration: none;
+            // padding-bottom: 1rem;
+        }
+        &:hover {
+            color: $color-cerise-analogous;
+        }
+    }
+}

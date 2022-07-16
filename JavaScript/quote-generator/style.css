@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap');
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    /* 1 rem = 10px (default) */
+}
+
+body {
+    min-height: 100vh;
+    /* heropatterns.com */
+    color: black;
+    font-family: 'Roboto Mono', monospace;
+    text-align: center;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(126, 187, 236);
+    background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 20.5V18H0v-2h20v-2H0v-2h20v-2H0V8h20V6H0V4h20V2H0V0h22v20h2V0h2v20h2V0h2v20h2V0h2v20h2V0h2v20h2v2H20v-1.5zM0 20h2v20H0V20zm4 0h2v20H4V20zm4 0h2v20H8V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 4h20v2H20v-2zm0 4h20v2H20v-2zm0 4h20v2H20v-2zm0 4h20v2H20v-2z' fill='%23010101' fill-opacity='0.22' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+.quote-container {
+    width: auto;
+    max-width: 90rem;
+    padding: 2rem 3rem;
+    border-radius: 1rem;
+    background-color: rgba(255, 255, 255, .4);
+    box-shadow: 0 10px 10px 10px rgba(0, 0, 0, .2);
+}
+
+.quote-text {
+    font-size: 4.4rem;
+}
+
+.long-quote {
+    font-size: 3.2rem;
+}
+
+.fa-quote-left {
+    font-size: 6.4rem;
+}
+
+.quote-author {
+    margin-top: 1.5rem;
+    font-weight: 400;
+    font-size: 3.2rem;
+    font-style: italic;
+}
+
+.button-container {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    outline: none;
+    cursor: pointer;
+    font-size: 2rem;
+    height: 4rem;
+    border-radius: 1rem;
+    color: #fff;
+    background-color: rgba(126, 187, 236, .75);
+    padding: .8rem 2.9rem;
+    box-shadow: 0 .5rem rgba(121, 121, 121, .65);
+}
+
+button:hover {
+    filter: brightness(110%);
+}
+
+button:active {
+    transform: translate(0, .5rem);
+    box-shadow: 0 .2rem rgba(121, 121, 121, .65);
+}
+
+.twitter-button:hover {
+    color: #38a1f3;
+}
+
+.fa-twitter {
+    font-size: 2.4rem;
+}
+
+
+/* Loader - https://www.w3schools.com/howto/howto_css_loader.asp*/
+
+.loader {
+    border: 16px solid #f3f3f3;
+    /* Light grey */
+    border-top: 16px solid #38a1f3;
+    /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* Media Query: Tablet or smaller */
+
+@media screen and (max-width: 100rem) {
+    .quote-container {
+        margin: 1rem;
+    }
+    .quote-text {
+        font-size: 4rem;
+    }
+}

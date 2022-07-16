@@ -1,0 +1,186 @@
+.gallery {
+    background-color: $color-grey-light-1;
+    grid-column: full-start / full-end;
+    display: grid;
+    /*grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(7, 5vw);*/
+    grid-template: repeat(7, 5vw) / repeat(8, 1fr);
+    // 5vw is arbitrary - Could also have set height of entire gallery container and used fr 
+    // images have an intrinsic aspect ratio and don't necessarily fill their containers
+    // & > * {width: 100%} but still not perfect so add object fit to the parent container of the picture (gallery__item) and give the item (gallery_text) the 100% width
+    // This is what would do if these were images instead of <p>'s - Use object fit cover instead of background image cover
+    // object fit doesn't work unless state height and width
+    grid-gap: 1vw;
+    padding: 1vw;
+    // padding to match grid
+    &__item {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        &--1 {
+            grid-row: 1 / span 2;
+            grid-column: 1 / span 2;
+            // medium landscape 2 down 2 across
+            // Do I block my heart from feeling?
+            background-image: linear-gradient(to right, rgba($color-grey-light-1, .5), rgba($color-grey-light-1, .5)), url(../img/squarepinkup.jpg);
+            background-size: cover;
+            font-family: $font-display;
+            font-size: 2.5rem;
+            font-style: italic;
+        }
+        &--2 {
+            grid-row: 1 / span 3;
+            grid-column: 3 / span 3;
+            // large landscape 3 down 3 across
+            // Am I aware of my feelings, needs, desire, longings, and hopes?background-image: url(../img/landscape-turquoise.jpg);
+            background-image: linear-gradient(to right, rgba($color-grey-light-1, .5), rgba($color-grey-light-1, .5)), url(../img/landscape-turquoise.jpg);
+            background-size: cover;
+            font-family: $font-display;
+            font-size: 2.5rem;
+            font-style: italic;
+        }
+        &--3 {
+            grid-row: 1 / span 2;
+            grid-column: 6 / 7;
+            // small square 2 down 1 across
+            // LIVE
+            background-image: linear-gradient(to right, rgba($color-grey-light-1, .5), rgba($color-grey-light-1, .5)), url(../img/square418.jpg);
+            background-size: cover;
+            font-family: 'Permanent Marker', cursive;
+            font-size: 4rem;
+        }
+        &--4 {
+            grid-row: 1 / span 2;
+            grid-column: 7 / -1;
+            // medium landscape 2 down 2 across
+            // Do I seek fulfillment in counterfeit ways?
+            background-image: linear-gradient(to right, rgba($color-grey-light-1, .6), rgba($color-grey-light-1, .6)), url(../img/landscape-gold.jpg);
+            background-size: cover;
+            font-family: $font-display;
+            font-size: 2.5rem;
+            font-style: italic;
+        }
+        &--5 {
+            grid-row: 3 / span 3;
+            grid-column: 1 / span 2;
+            // large square 3 down x 2 across
+            // How do I distract myself from the cry of my heart?
+            background-image: linear-gradient(to right, rgba($color-grey-light-1, .3), rgba($color-grey-light-1, .3)), url(../img/landscape-down.jpg);
+            background-size: cover;
+            font-family: $font-display;
+            font-size: 2.5rem;
+            font-style: italic;
+        }
+        &--6 {
+            grid-row: 4 / span 2;
+            grid-column: 3 / span 2;
+            // medium landscape 2 down 2 across
+            // Do I tell the truth about my heart to anyone?
+            background-image: linear-gradient(to right, rgba($color-grey-light-1, .6), rgba($color-grey-light-1, .6)), url(../img/landscape-gold.jpg);
+            background-size: cover;
+            font-family: $font-display;
+            font-size: 2.5rem;
+            font-style: italic;
+        }
+        &--7 {
+            grid-row: 4 / 5;
+            grid-column: 5 / 6;
+            // tiny box
+            // BE
+            background-image: linear-gradient(to right, rgba($color-grey-light-1, .3), rgba($color-grey-light-1, .3)), url(../img/landscape-blue-white.jpg);
+            background-size: cover;
+            font-family: 'Permanent Marker', cursive;
+            font-size: 4rem;
+            align-self: flex-start;
+        }
+        &--8 {
+            grid-row: 3 / span 2;
+            grid-column: 6 / span 2;
+            // medium landscape 2 down 2 across
+            // Do I pretend things don't matter when they do?
+            background-image: linear-gradient(to right, rgba($color-grey-light-1, .7), rgba($color-grey-light-1, .7)), url(../img/landscape-ecrue.jpg);
+            background-size: cover;
+            font-family: $font-display;
+            font-size: 2.5rem;
+            font-style: italic;
+        }
+        &--9 {
+            grid-row: 3 / span 3;
+            grid-column: 8 / -1;
+            // medium portrait 3 down 1 across
+            // Let go of Control
+            background-image: linear-gradient(to right, rgba($color-grey-light-1, .5), rgba($color-grey-light-1, .5)), url(../img/portrait418x626.jpg);
+            background-size: cover;
+            font-family: $font-display;
+            font-size: 2.5rem;
+            font-style: italic;
+        }
+        &--10 {
+            grid-row: 6 / span 2;
+            grid-column: 1 / 2;
+            // small square 2 down 1 across
+            // LOVE
+            background-image: linear-gradient(to right, rgba($color-grey-light-1, .5), rgba($color-grey-light-1, .5)), url(../img/square418.jpg);
+            background-size: cover;
+            font-family: 'Permanent Marker', cursive;
+            font-size: 4rem;
+        }
+        &--11 {
+            grid-row: 6 / span 2;
+            grid-column: 2 / span 2;
+            // medium landscape 2 down 2 across
+            // Do I slip into survivor mode when it's not necessary?
+            background-image: linear-gradient(to right, rgba($color-grey-light-1, .7), rgba($color-grey-light-1, .7)), url(../img/landscape-ecrue.jpg);
+            background-size: cover;
+            font-family: $font-display;
+            font-size: 2.5rem;
+            font-style: italic;
+        }
+        &--12 {
+            grid-row: 6 / span 2;
+            grid-column: 4 / 5;
+            // small square 2 down 1 across
+            // LEAD
+            background-image: linear-gradient(to right, rgba($color-grey-light-1, .4), rgba($color-grey-light-1, .4)), url(../img/squarepinkdown.jpg);
+            background-size: cover;
+            font-family: 'Permanent Marker', cursive;
+            font-size: 4rem;
+        }
+        &--13 {
+            grid-row: 5 / span 3;
+            grid-column: 5 / span 3;
+            // large landscape 3 down 3 across
+            // Do I live in freedom, recognizing my innate craving for full life knowing I cannot control it?
+            background-image: linear-gradient(to right, rgba($color-grey-light-1, .3), rgba($color-grey-light-1, .3)), url(../img/landscape-down.jpg);
+            background-size: cover;
+            font-family: $font-display;
+            font-size: 2.5rem;
+            font-style: italic;
+        }
+        &--14 {
+            grid-row: 6 / span 2;
+            grid-column: 8 / -1;
+            // small square 2 down 1 across
+            // GROW
+            background-image: linear-gradient(to right, rgba($color-grey-light-1, .3), rgba($color-grey-light-1, .3)), url(../img/landscape-turquoise.jpg);
+            background-size: cover;
+            font-family: 'Permanent Marker', cursive;
+            font-size: 4rem;
+        }
+    }
+    &__text {
+        width: 100%;
+        text-align: center;
+        padding: 1vw 1vw;
+        color: $color-background-black;
+        @media only screen and (max-width: $breakpoint-large) {
+            font-size: .8em;
+        }
+        @media only screen and (max-width: $breakpoint-medium) {
+            font-size: .6em;
+        }
+        @media only screen and (max-width: $breakpoint-small) {
+            font-size: .3em;
+        }
+    }
+}

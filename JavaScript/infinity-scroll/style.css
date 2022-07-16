@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@1,300&family=Roboto&display=swap');
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    /* 1 rem = 10px (default) */
+}
+
+body {
+    margin: 0;
+    font-family: 'Nunito Sans', sans-serif;
+    background: rgba(252, 210, 153, 0.2);
+    color: #808080;
+    font-weight: 300;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 4rem;
+    letter-spacing: .25rem;
+}
+
+.loader {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.loader img {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* allows for size of image and that originally positiong top left corner */
+}
+
+
+/* loader img is a child of the class loader which acts as a container - fixed position because want it to stay in center even if user is scrolling */
+
+
+/* Image Container */
+
+.image-container {
+    margin: 1rem 30%;
+}
+
+.image-container img {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+
+/* Media Query: Large Smartphone Vertical */
+
+@media screen and (max-width: 600px) {
+    h1 {
+        font-size: 2rem;
+    }
+    .image-container {
+        margin: 1rem;
+    }
+}

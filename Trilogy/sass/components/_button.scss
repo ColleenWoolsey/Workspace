@@ -1,0 +1,121 @@
+.btn {
+    &, // On a form there is no link and visited, so need to include just btn (&) here so these properties can be applied to form submit buttons
+    &:link,
+    &:visited {
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 1.5rem 4rem;
+        border-radius: 10rem;
+        font-weight: 600;
+        font-size: $default-font-size;
+        display: inline-block;
+        transition: all .2s;
+        position: relative;
+        // For the button element on forms
+        border: none;
+        cursor: pointer;
+    }
+    &:hover {
+        transform: translateY(-0.3rem);
+        box-shadow: 0 1rem 2rem rgba(0, 0, 0, .3);
+        &::after {
+            transform: scaleX(1.4) scaleY(1.6);
+            opacity: 0;
+        }
+    }
+    /* When hover, larger blurrier shadow appears and moves up 3px; */
+    &:active,
+    &:focus {
+        outline: none;
+        transform: translateY(-1px);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .3);
+    }
+    /* When click, smaller shadow with less blur and position changes */
+    &::after {
+        content: "";
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        border-radius: 10rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all .4s;
+    }
+    &--animated {
+        animation: moveInBottom .5s ease-out .75s;
+        animation-fill-mode: backwards;
+    }
+    &--white {
+        background-color: $color-white;
+        color: $color-blue-dark-3;
+        &::after {
+            background-color: $color-white;
+        }
+    }
+    &--blue {
+        background-color: $color-dark;
+        color: $color-blue-light-1;
+        &::after {
+            background-color: $color-dark;
+        }
+    }
+}
+
+.btn--arrow-box {
+    text-align: start;
+    margin-right: -12rem;
+    padding-left: 12rem;
+    @include respond(phone) {
+        padding-left: 0;
+    }
+}
+
+.btn--arrow {
+    &:link,
+    &:visited {
+        text-decoration: none;
+        padding: 5rem 15rem 5rem 2rem;
+        @include respond(phone) {
+            font-size: .75rem;
+            padding: 2.5rem 7.5rem 2.5rem 1rem;
+        }
+        letter-spacing: 0.3rem;
+        font-size: 1.6rem;
+        font-weight: 700;
+        display: inline-block;
+        transition: all 1s;
+        background-color: $color-light;
+        color: $color-black;
+        position: relative;
+        clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
+        animation-name: arrowMoveInFromLeft;
+        animation-duration: 1s;
+        animation-timing-function: ease-out;
+        backface-visibility: hidden;
+    }
+}
+
+.btn--text {
+    &:link,
+    &:visited {
+        font-size: $larger-font-size;
+        color: $color-blue-light-1;
+        display: inline-block;
+        text-decoration: none;
+        border-bottom: 1px solid $color-blue-light-3;
+        padding: 3px;
+        transition: all .2s;
+    }
+    &:hover {
+        background-color: $color-light;
+        color: $color-black;
+        box-shadow: 0 1rem 2rem rgba($color-white, .15);
+        transform: translateY(-2px);
+    }
+    &:active {
+        box-shadow: 0 .5rem 1rem rgba($color-white, .15);
+        transform: translateY(0);
+    }
+}

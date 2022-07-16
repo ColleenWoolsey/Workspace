@@ -1,0 +1,95 @@
+body {
+    font-family: lato, sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    color: $color-light;
+}
+
+.heading__primary {
+    text-transform: uppercase;
+    backface-visibility: hidden;
+    margin-bottom: 6rem;
+    color: $color-light;
+    &--main {
+        display: block;
+        font-size: 8rem;
+        font-weight: 600;
+        letter-spacing: 2.5rem;
+        @include respond(phone) {
+            letter-spacing: 1rem;
+            font-size: 4rem;
+            text-align: center;
+        }
+        text-shadow: .5rem 1rem 2rem rgba($color-white, .2);
+        animation-name: moveInFromLeft;
+        animation-duration: 1s;
+        animation-timing-function: ease-in-out;
+    }
+    /* backface-visibility prevents shakiness */
+    &--sub {
+        display: block;
+        font-size: 6rem;
+        font-weight: 400;
+        letter-spacing: 2.4rem;
+        @include respond(phone) {
+            letter-spacing: 1rem;
+            font-size: 3rem;
+            text-align: center;
+            margin-left: 0;
+        }
+        margin-left: 6rem;
+        margin-bottom: 3rem;
+        animation-name: moveInFromRight;
+        animation-duration: 1s;
+        animation-timing-function: ease-out;
+    }
+}
+
+.heading__secondary {
+    display: inline-block;
+    background-image: linear-gradient(to right, $color-blue-light-3, $color-blue-light-1);
+    background-clip: text;
+    -webkit-background-clip: text;
+    transition: all .2s;
+    text-transform: uppercase;
+    color: transparent;
+    letter-spacing: .2rem;
+    font-weight: 700;
+    font-size: 2.5rem;
+    @include respond(tab-port) {
+        font-size: 2rem;
+    }
+    @include respond(phone) {
+        font-size: 1.5rem;
+    }
+    &:hover {
+        transform: skewY(-3deg) skewX(-15deg) scale(1.2);
+        text-shadow: .5rem 1rem 2rem rgba($color-black, .4);
+    }
+}
+
+.heading__tertiary {
+    font-size: $default-font-size;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.ul {
+    list-style-position: inside;
+}
+
+.paragraph,
+.li {
+    font-size: $smallest-font-size;
+    &:not(:last-child) {
+        margin-bottom: .5rem;
+    }
+    &:last-child {
+        margin-bottom: 1rem;
+    }
+}
+
+.h6 {
+    color: $color-dark !important;
+    margin-bottom: 3rem;
+}

@@ -1,0 +1,124 @@
+.form {
+    &__group:not(:last-child) {
+        margin-bottom: 1rem;
+        margin-left: 2rem;
+    }
+    &__input {
+        font-size: 1.5rem;
+        font-family: inherit;
+        // browser doesn't use current font family in form unless specify
+        color: inherit;
+        // input elements also don't inherit color
+        padding: .5rem 3rem;
+        border-radius: 2px;
+        background-color: rbga($color-white, .5);
+        border: none;
+        border-bottom: 3px solid transparent;
+        // don't want the border to appear but if don't include space for it here the field jumps on focus to accomodate the shadow
+        width: 90%;
+        display: block;
+        transition: all .3s;
+        // for when click or color changes
+        @include respond(tab-port) {
+            width: 100%;
+        }
+        &:focus {
+            outline: none;
+            // outline in forms is a default
+            box-shadow: 0 1rem 2rem rgba($color-black, .1);
+            border-bottom: 5px solid $color-dark;
+            // these 2 make the field visible for accessibility
+        }
+        &:focus:invalid {
+            border-bottom: 5px solid $color-cerise-analogous;
+            // the input content of field being focused on is invalid
+        }
+        &::placeholder {
+            color: $color-blue-light-2;
+        }
+        // placeholder is a pseudo element not a class
+    }
+    &__label {
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-left: 1.5rem;
+        margin-top: .7rem;
+        display: block;
+        // so can use box model properties
+        transition: all .3s;
+    }
+    // INitially the label isn't visible
+    &__input:placeholder-shown+&__label {
+        // Want to style the label not the placeholder, but label is not a child element of the input. They are siblings - both children of form__group. "+" is adjacent sibling - one that comes immediately after the FIRST element - If not 2nd, then use ~.  This wouldn't work if label element came before input element.
+        opacity: 0;
+        // Use opacity as well as hidden because can't animate hidden
+        visibility: hidden;
+        transform: translateY(-4rem);
+        // When start typing in focused field the label appears underneath the input field - Looks like placeholder is flying out there. But it's hidden label
+    }
+    &__radio-group {
+        width: 49%;
+        display: inline-block;
+        // This puts them side by side with no line breaks
+        @include respond(tab-port) {
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+    }
+    &__radio-input {
+        display: none;
+        // This is the original input circle
+    }
+    &__radio-label {
+        font-size: $default-font-size;
+        cursor: pointer;
+        position: relative;
+        padding-left: 4.5rem;
+        color: $color-blue-dark-3;
+        // Otherwise label and button start at same place
+    }
+    &__radio-button {
+        // is composed of 2 parts to display empty or selected
+        height: 3rem;
+        width: 3rem;
+        border: 5px solid $color-dark;
+        border-radius: 50%;
+        display: inline-block;
+        // top 4 properties only work if this is a block element - otherwise an ellipses - If use just block, the circles occupy their own line above labels
+        position: absolute;
+        // Only way to line it up where want it to be - Radio__label is the parent of the span
+        left: 0;
+        top: -.4rem;
+        // Instead of using HTML, using psuedo element::after for the inner circle
+        &::after {
+            content: "";
+            // Whenever use a pseudo element have to state content and display properties
+            display: block;
+            height: 1.3rem;
+            width: 1.3rem;
+            border-radius: 50%;
+            position: absolute;
+            // It's OK the parent is not position:relative, the parent just needs to be specified
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            // Trick for centering an element within another element
+            background-color: $color-dark;
+            opacity: 0;
+            // Inner circle is invisible
+            transition: opacity .2s;
+        }
+    }
+    &__radio-input:checked~&__radio-label &__radio-button::after {
+        opacity: 1;
+    }
+    // <input type="radio" class="form__radio-input" id="large" name="size">
+    // <label for="large" class="form__radio-label">
+    //     <span class="form__radio-button"></span>                                       
+    //     Monthly Updates
+    // </label>
+    // One of the radio buttons in a set will always be checked by default - &__radio-input:checked references it
+    // So want to set the opacity of that one to visible - radio-label span is not a direct child of radio-input, so use sibling selector to tie it into radio-input and then select it's direct child radio-button::after
+    // When radio-input is checked, radio-button::after transitions to opacity 1
+    // Can click on label, not just button and it works
+}

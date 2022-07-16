@@ -1,0 +1,569 @@
+.logo {
+    // height: 7rem;
+    margin-left: 3rem;
+    background-image: linear-gradient( to left bottom, rgba(93, 170, 104, .5), rgba(250, 241, 207, .5));
+    box-shadow: var(--shadow-light--champagne);
+    border: 2px var(--color-primary3-light) double;
+    padding: 2rem 1.5rem;
+    border-radius: 50%;
+    @media only screen and (max-width: $breakpoint-medium) {
+        height: 75%;
+        padding: 1.5rem 1.125rem;
+    }
+    @media only screen and (max-width: $breakpoint-small) {
+        height: 50%;
+        padding: 1rem .75rem;
+    }
+}
+
+// Search Box
+.search {
+    flex: 0 0 40%;
+    // flex container within a flex item for svg
+    display: flex;
+    // center along cross axis
+    align-items: center;
+    // center along main axis
+    justify-content: center;
+    @media only screen and (max-width: $breakpoint-smallest) {
+        order: 1;
+        flex: 0 0 100%;
+        background-color: var(--color-grey-light-2);
+        // Order search bar to end and wrap with 100% width(flex-basis)
+    }
+    &__input {
+        font-family: inherit;
+        font-size: inherit;
+        color: inherit;
+        // Inherit not automatic for input items
+        background-color: var(--color-grey-light-1);
+        border: none;
+        padding: .25rem 2rem;
+        margin-right: -3.25rem;
+        // -ve margin so button will move on top of input
+        border-radius: 50px;
+        width: 90%;
+        transition: all .2s;
+        // expands on focus
+        &:focus {
+            outline: none;
+            // this is the square input box
+            width: 100%;
+            background-color: var(--color-primary3-background-green);
+        }
+    }
+    // use adjacent selector - input and button are siblings
+    &__input:focus+&__button {
+        background-color: var(--color-primary3-background-green);
+    }
+    // button is on top of input
+    &__button {
+        border: none;
+        background-color: var(--color-grey-light-1);
+        &:focus {
+            outline: none;
+        }
+        &:active {
+            transform: translate(2px);
+        }
+    }
+    .search_icon {
+        height: 1.5rem;
+        width: 1.5rem;
+        @media only screen and (max-width: $breakpoint-small) {
+            height: 1.25rem;
+            width: 1.25rem;
+        }
+    }
+    &__icon {
+        height: 2.5rem;
+        width: 2.5rem;
+    }
+}
+
+// User Navigation
+.user-nav {
+    display: flex;
+    flex: 0 0 18%;
+    // center along vertical/cross axis
+    align-items: center;
+    align-self: stretch;
+    // If align center, the icon-boxes aren't tall enough/don't match the photo
+    margin-right: 3rem;
+    //  & > *  Selects all direct children of search__user-nav - Or could group them and make a selector for icon-box and user at same time
+    // @media only screen and (max-width: $breakpoint-small) {
+    //     margin-right: .5rem;
+    // }
+    &__icon-box,
+    &__user {
+        padding: 0 2rem;
+        cursor: pointer;
+        display: flex;
+        // center along vertical/cross axis
+        align-items: center;
+        height: 100%;
+        // @media only screen and (max-width: $breakpoint-small) {
+        //     padding: .5rem;
+        //     margin-left: 1rem;
+        // }
+    }
+    &>*:hover {
+        box-shadow: var(--shadow-light--champagne);
+        color: var(--color-primary3-dark);
+    }
+    &__icon-box {
+        position: relative;
+    }
+    &__icon {
+        height: 2.5rem;
+        width: 2.5rem;
+        // @media only screen and (max-width: $breakpoint-small) {
+        //     height: 1.25rem;
+        //     width: 1.25rem;
+        // }
+    }
+    &__notification {
+        font-size: .8rem;
+        height: 1.75rem;
+        width: 1.75rem;
+        border-radius: 50%;
+        background-color: var(--color-primary1);
+        color: #fff;
+        position: absolute;
+        // top: 3rem;
+        right: 1rem;
+        display: flex;
+        // to align number in icon-box
+        justify-content: center;
+        align-items: center;
+    }
+    &__user {
+        // @media only screen and (max-width: $breakpoint-small) {
+        //     display: flex;
+        //     flex-direction: column;
+        //     justify-content: center;
+        // }
+    }
+    &__user-photo {
+        height: 3.75rem;
+        border-radius: 50%;
+        margin-right: 1rem;
+        // @media only screen and (max-width: $breakpoint-small) {
+        //     height: 2.75rem;
+        //     margin-right: 0;
+        // }
+    }
+    &__user-name {
+        color: var(--color-primary3-background-green);
+    }
+}
+
+// Side Navigation
+.side-nav {
+    font-size: 1.4rem;
+    list-style: none;
+    margin-top: 3.5rem;
+    color: var(--color-primary3-light);
+    @media only screen and (max-width: $breakpoint-medium) {
+        display: flex;
+        margin-top: 0;
+    }
+    &__item {
+        position: relative;
+        // in this case the item is the parent element, not the side-nav
+        &:not(last-child) {
+            margin-bottom: .5rem;
+            @media only screen and (max-width: $breakpoint-medium) {
+                margin: 0;
+            }
+        }
+        @media only screen and (max-width: $breakpoint-medium) {
+            flex: 1;
+            // all 4 flex items can grow as much as they can and occupy the same space
+        }
+        @media only screen and (max-width: $breakpoint-small) {
+            font-size: .9rem;
+        }
+    }
+    // This pseudo element list item is placed before item and shows when hover the item
+    &__item::before {
+        content: "";
+        // unless specify content won't show in browser
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        // Give it the exact same height as the list item
+        width: 3px;
+        // Creates the line
+        background-color: var(--color-primary3-dark);
+        transform: scaleY(0);
+        // Not visible in non-hover state
+        transition: transform .2s, width .4s .2s, background-color .1s;
+        // .2s delay so transform happens then width increase for .4s
+        // can have different speeds for different properties
+        // Default of transform origin is the middle so don't need to add here
+        // Include animation for item--active::before
+    }
+    // active state is same as hover
+    &__item:hover::before,
+    &__item--active::before {
+        transform: scaleY(1);
+        width: 100%;
+    }
+    // Need some indication to user that link is active 
+    &__item--active::before {
+        background-color: var(--color-primary3);
+    }
+    &__link:link,
+    &__link:visited {
+        color: var(--color-primary3-light);
+        text-decoration: none;
+        text-transform: uppercase;
+        display: block;
+        padding: 1.5rem 3rem;
+        position: relative;
+        // Unless put link on top of pseudo elemebt the text is covered - Also have to state a position for z-index to work
+        z-index: 10;
+        @media only screen and (max-width: $breakpoint-medium) {
+            padding: .75rem 1rem;
+        }
+    }
+}
+
+.legal {
+    font-size: 1.2rem;
+    color: var(--color-primary3-light);
+    text-align: center;
+    padding: 2.5rem;
+    @media only screen and (max-width: $breakpoint-medium) {
+        display: none;
+    }
+}
+
+// Gallery
+.gallery {
+    display: flex;
+    &__photo {
+        width: 100%;
+        border: 1px solid var(--color-primary3-light);
+        display: block;
+        // If leave it as an inline element get a small space underneath it
+    }
+}
+
+// Overview
+.overview {
+    display: flex;
+    align-items: center;
+    border-bottom: var(--line);
+    // justify-content doesn't have a good option to put all the extra space in the middle, So could asign item 1 (the header) a flex grow of 1 so it occupies all the available space. However this creates problems if want to hover it and change properties. So, set MARGIN-RIGHT TO AUTO on first item or margin left auto on second item
+    &__heading {
+        font-size: 2.4rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        margin-right: auto;
+        letter-spacing: 1.1px;
+        padding: 1.5rem 3rem;
+        @media only screen and (max-width: $breakpoint-small) {
+            font-size: 1.75rem;
+            padding: .75rem 1rem;
+            letter-spacing: .9px;
+        }
+        @media only screen and (max-width: $breakpoint-small) {
+            font-size: 1.5rem;
+            padding: .5rem .75rem;
+            letter-spacing: .8px;
+        }
+    }
+    &__location {
+        font-size: 1.4rem;
+        display: flex;
+        // aligns both icon and button
+        vertical-align: center;
+        @media only screen and (max-width: $breakpoint-small) {
+            font-size: 1rem;
+        }
+    }
+    &__icon-location {
+        width: 1.75rem;
+        height: 1.75rem;
+        margin-right: .75rem;
+        @media only screen and (max-width: $breakpoint-small) {
+            width: 1rem;
+            height: 1rem;
+        }
+    }
+    &__donations {
+        background-color: var(--color-primary3);
+        color: #fff;
+        margin-left: 3rem;
+        padding: 0 2.25rem;
+        align-self: stretch;
+        // flex container for percentage and donor-count
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        // aligns on vertical   
+        @media only screen and (max-width: $breakpoint-small) {
+            margin-left: 1rem;
+            padding: 0 .5rem;
+        }
+    }
+    &__percentage {
+        font-size: 2.25rem;
+        font-weight: 300;
+        margin-bottom: -3px;
+        @media only screen and (max-width: $breakpoint-small) {
+            font-size: 1.2rem;
+            margin-bottom: -2px;
+        }
+    }
+    &__donor-count {
+        font-size: .8rem;
+        text-transform: uppercase;
+        @media only screen and (max-width: $breakpoint-small) {
+            font-size: .6rem;
+        }
+    }
+}
+
+// Button-inline
+.btn-inline {
+    border: none;
+    color: var(--color-primary3);
+    // inherit lets font size be different in different places
+    font-size: inherit;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 2px;
+    display: inline-block;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all .2s;
+    & span {
+        margin-left: 3px;
+        transition: margin-left .2s;
+    }
+    &:hover {
+        color: var(--color-primary3-dark);
+        span {
+            margin-left: 8px;
+        }
+    }
+    &:focus {
+        outline: none;
+        animation: pulsate 1s infinite;
+        // animation Keeps going as long as focused
+    }
+}
+
+// Same at beginning and end
+@keyframes pulsate {
+    0% {
+        transform: scale(1);
+        box-shadow: none;
+    }
+    50% {
+        transform: scale(1.1);
+        box-shadow: 0 1rem 4rem rgba(0, 0, 0, .25);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: none;
+    }
+}
+
+// Paragraph
+// Can't use last-child because there's another section below
+.paragraph:not(:last-of-type) {
+    margin-bottom: 2rem;
+}
+
+// List
+.list {
+    list-style-position: inside;
+    list-style-image: url("../img/SVG/hand.svg");
+    margin: 3rem 0;
+    padding: 3rem 0;
+    border-top: var(--line);
+    border-bottom: var(--line);
+    display: flex;
+    flex-wrap: wrap;
+    &__item {
+        flex: 0 0 100%;
+        // if wanted 2 column list set width to 50%
+        margin-bottom: .7rem;
+    }
+}
+
+// Recommend
+.recommend {
+    font-size: 1.2rem;
+    color: var(--color-grey-dark-3);
+    display: flex;
+    align-items: center;
+    // After center use margin right to create space between the count(text) and the pics and push the pics all the way to the right side
+    &__count {
+        margin-right: auto;
+    }
+    &__friends {
+        display: flex;
+        // Keeps the photos side by side
+    }
+    &__photo {
+        box-sizing: content-box;
+        // don't want to include border and padding into size of element so change from border box to content box so pics don't look small and cropped
+        height: 4rem;
+        width: 4rem;
+        border-radius: 50%;
+        border: 3px solid var(--color-grey-light-1);
+        // border puts some visual space between so don't look so squished
+        &:not(:last-child) {
+            margin-right: -2rem;
+        }
+        // -ve margin makes them overlap
+        // at 900px the photos start to wrap so change flex direction in content to column so nav and emergency view stack
+    }
+}
+
+// Donations
+.donation {
+    background-color: var(--color-grey-light-1);
+    // background-color: var(--color-grey-light-1);
+    box-shadow: var(--shadow-light);
+    padding: 2rem;
+    margin-bottom: 2.5rem;
+    position: relative;
+    // define position on parent so can be absolute on ::before
+    overflow: hidden;
+    width: 100%;
+    @media only screen and (max-width: $breakpoint-medium) {
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    &__text {
+        // This is the blockqupte
+        margin-bottom: 1rem;
+        z-index: 10;
+        // puts twxt on top of ::before quote mark
+        position: relative;
+    }
+    &__donor {
+        // Photo and donor-box
+        display: flex;
+        align-items: center;
+    }
+    &__photo {
+        height: 4.5rem;
+        width: 4.5rem;
+        border-radius: 50%;
+        margin-right: 1.5rem;
+    }
+    &__donor-box {
+        // contains name and date - want it to fill available space and hug right 
+        margin-right: auto;
+    }
+    &__donor-name {
+        font-size: 1.1rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin-bottom: .4rem;
+    }
+    &__donor-date {
+        font-size: 1rem;
+        color: var(--color-grey-dark-3);
+    }
+    &::before {
+        // This is a left quotation mark img that comes "before" the review"
+        content: "\201C";
+        position: absolute;
+        top: -2.75rem;
+        left: -1rem;
+        line-height: 1;
+        font-size: 20rem;
+        color: var(--color-grey-light-4);
+        font-family: sans-serif;
+        z-index: 1;
+        // z-index only works if set position
+    }
+}
+
+// Call to action box for h2 and btn
+.cta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3.5rem 0;
+    text-align: center;
+    @media only screen and (max-width: $breakpoint-medium) {
+        padding: 1.5rem .5;
+    }
+    &__donate-now {
+        font-size: 2rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        margin-bottom: 2.5rem;
+        @media only screen and (max-width: $breakpoint-small) {
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+    }
+}
+
+// Call to action button
+.btn {
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    border-radius: 100px;
+    border: none;
+    background-image: linear-gradient(to right, var(--color-primary3), var(--color-primary3-dark));
+    color: var(--color-primary3-light);
+    position: relative;
+    // so can position invisible
+    overflow: hidden;
+    // this hides the secondary/invisible text that is outside button
+    cursor: pointer;
+    &>* {
+        // all 4 of these are repeated on bth child elements
+        display: inline-block;
+        // inline-block allows use of padding
+        height: 100%;
+        width: 100%;
+        // height and width of parent element
+        transition: all .2s;
+        @media only screen and (max-width: $breakpoint-small) {
+            padding: .5rem 2rem;
+            font-size: 1rem;
+        }
+    }
+    &__visible {
+        padding: 2rem 7.5rem;
+        // padding defines size of button
+    }
+    &__invisible {
+        position: absolute;
+        padding: 2rem 7.5rem;
+        left: 0;
+        top: -100%;
+        // moves up exactly the size of the element
+    }
+    &:hover {
+        background-image: linear-gradient(to left, var(--color-primary3), var(--color-primary3-dark));
+        // gradient switches sides
+    }
+    &:hover &__visible {
+        transform: translateY(100%);
+        // the text moves down using transform
+    }
+    &:hover &__invisible {
+        top: 0;
+        // moves from -100% to zero using positioning
+    }
+    &:focus {
+        outline: none;
+        animation: pulsate 1s infinite;
+    }
+}

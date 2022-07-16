@@ -1,0 +1,39 @@
+.declarations {
+    background-color: rgba($color-secondary-dark, .9);
+    grid-column: col-start 7 / full-end;
+    padding: 3rem;
+    display: grid;
+    // a grid with one column and 2 rows - header and list container
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+    // only centers heading because the list content defines the width of the grid and it's already the size of the entire track
+    grid-row-gap: 3rem;
+    // This creates space between header and list
+    @media only screen and (max-width: $breakpoint-medium) {
+        grid-column: 1 / -1;
+    }
+    &__list {
+        display: grid;
+        // The grid is an element inside the container instead of the whole container (like the header)
+        grid-template-columns: min-content max-content;
+        // max-content means there won't be line breaks in the text *********
+        grid-column-gap: 1.5rem;
+        grid-row-gap: 5vh;
+        align-items: center;
+        // vertically
+        @media only screen and (max-width: $breakpoint-medium) {
+            grid-template-columns: repeat(3, min-content max-content);
+        }
+        @media only screen and (max-width: $breakpoint-small) {
+            grid-template-columns: min-content max-content;
+        }
+    }
+    &__img {
+        width: 2.5rem;
+        background-color: rgba($color-secondary-dark, .7);
+        border: 4px solid rgba($color-secondary-dark, .4);
+        border-radius: 50%;
+        display: block;
+    }
+}
